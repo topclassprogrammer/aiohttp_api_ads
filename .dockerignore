@@ -1,0 +1,12 @@
+.dockerignore
+.gitignore
+.venv
+.env.example
+.idea
+__pycache__
+docker-compose.yml
+Dockerfile
+client.py
+client.http
+http-client.env.json
+README.md

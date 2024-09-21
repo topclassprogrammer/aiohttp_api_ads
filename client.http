@@ -1,0 +1,74 @@
+# Примеры REST API-запросов
+
+@baseURL = http://127.0.0.1:80
+
+# Создать пользователя с получением токена
+POST {{baseURL}}/user
+Content-Type: application/json
+
+{
+"first_name": "Donald",
+"last_name": "Trump",
+"email": "donald@trump.com",
+"password": "P@ssw0rd!"
+}
+
+###
+
+# Получить информацию об аккаунте пользователя
+GET {{baseURL}}/user/
+Content-Type: application/json
+
+###
+
+# Изменить информацию в аккаунте пользователя
+PATCH {{baseURL}}/user/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.LwkgCOElcw3-Pjhj929-HrRYoHPRSShi7pRA-97TPt0
+
+{
+"last_name": "Biden"
+}
+
+###
+
+# Удалить аккаунт пользователя
+DELETE {{baseURL}}/user/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozfQ.dg7-moCG5Skgcr61rS4nG6IfK5yAJwwq9Rw4alOPoMw
+
+###
+
+# Создать объявление
+POST {{baseURL}}/advert
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0fQ.ZEVzAuQIaLvtYBBZOXFGYrutjIZKl2nB_qi_ypQwqfw
+
+{
+  "title": "iPhone 16 Pro",
+  "description": "новый"
+}
+
+###
+
+# Получить объявление
+GET {{baseURL}}/advert/1
+Content-Type: application/json
+
+###
+
+# Изменить объявление
+PATCH {{baseURL}}/advert/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.LwkgCOElcw3-Pjhj929-HrRYoHPRSShi7pRA-97TPt0
+
+{
+  "description": "б/у"
+}
+
+###
+
+# Удалить объявление
+DELETE {{baseURL}}/advert/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxfQ.LwkgCOElcw3-Pjhj929-HrRYoHPRSShi7pRA-97TPt0
